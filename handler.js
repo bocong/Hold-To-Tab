@@ -26,7 +26,10 @@ var DIST_THRESHOLD = 15;
     }
 
     self.getElemWithUrl = function(elem) {
-        while(!elem.href && elem.parentNode) {
+        while((!elem.href 
+            || elem.href.indexOf('#') > -1
+            || elem.href.indexOf('javascript:') > -1) 
+            && elem.parentNode) {
             elem = elem.parentNode;
         };
         if (!elem.href) {
