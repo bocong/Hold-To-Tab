@@ -1,0 +1,16 @@
+{
+    "name": "Hold To Tab",
+    "description": "Click & hold to open in a new tab. One-handed shortcut for cmd/ctrl+click.",
+    "version": "1.0",
+    "permissions": ["tabs"],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "js": ["handler.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "manifest_version": 2
+}
